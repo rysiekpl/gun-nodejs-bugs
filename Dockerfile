@@ -1,4 +1,5 @@
-FROM node:10
+ARG NODEVER="latest"
+FROM node:$NODEVER
 MAINTAINER rysiek@hackerspace.pl
 
 RUN npm install -g bats
