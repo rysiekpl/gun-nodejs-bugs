@@ -1,0 +1,19 @@
+{
+  "name": "gun-nodejs-bugs",
+  "version": "0.0.1",
+  "description": "Testing/documenting some bugs in Gun when run in NodeJS",
+  "main": "bin/gun-nodejs-bugs.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "rysiek",
+  "license": "AGPL-3.0",
+  "dependencies": {
+    "gun": "^0.2020.116",
+    "yargs": "^15.1.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rysiekpl/gun-nodejs-bugs.git"
+  }
+}
