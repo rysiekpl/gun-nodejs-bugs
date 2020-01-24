@@ -142,48 +142,6 @@ let gun_put = (key, subkey, text, gun=false) => {
 
 
 /* +-----------------------------------------------------------------------+ *\
-|* | defined tests                                                         | *|
-\* +-----------------------------------------------------------------------+ */
-
-/*let tests = {
-    'put-axe': ()=>{
-        
-        // prepare the Gun instances
-        Gun = require("gun");
-        gunSettings.axe = true
-        var gunWithAxe = Gun(gunSettings)
-        var gunWithAxe2 = Gun(gunSettings)
-        gunSettings.axe = false
-        var gunWithoutAxe = Gun(gunSettings)
-        var gunWithoutAxe2 = Gun(gunSettings)
-        
-        var d = new Date();
-        var t = d.getTime();
-        var testId = `test-at-${t}`
-        
-        console.log('\n1. testing with AXE *enabled*...')
-        console.log(`  - testId: ${testId}`)
-        console.log('  - put()...')
-        gun_put(testId, 'with-axe', 'with-axe-content', gunWithAxe)
-        console.log('  - get()...')
-        gun_get(testId, 'with-axe', gunWithAxe2)
-        
-        console.log('  - done.')
-        setTimeout(()=>{
-            console.log('\n2. testing with AXE *disabled*')
-            console.log(`  - testId: ${testId}`)
-            console.log('  - put()...')
-            gun_put(testId, 'without-axe', 'without-axe-content', gunWithoutAxe)
-            console.log('  - get()...')
-            gun_get(testId, 'without-axe', gunWithoutAxe2)
-            console.log('  - done.')
-            setTimeout(()=>{process.exit(0)}, 1000)
-        }, 1000)
-    }
-}*/
-
-
-/* +-----------------------------------------------------------------------+ *\
 |* | cli setup                                                             | *|
 \* +-----------------------------------------------------------------------+ */
 
@@ -237,19 +195,5 @@ const options = yargs
         (argv)=>{
             gun_put(argv.key, argv.subkey, argv.text)
         })
-    /*.command(
-        "test <testname>",
-        "Run a predefined test.",
-        (yargs) => {
-            yargs
-                .positional('testname', {'describe': "Name of the test to run."})
-        },
-        (argv)=>{
-            if (tests[argv.testname]) {
-                tests[argv.testname]()
-            } else {
-                console.log('Available tests:', Object.keys(tests).join(', '))
-            }
-        })*/
     .help()
     .argv;
